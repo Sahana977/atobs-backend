@@ -2,15 +2,14 @@
 
 Backend for **ATOBS: AI-Based Traffic Optimization and Bus Occupancy Prediction System Using CatBoost** (ICSCSA-2026).
 
-Python + FastAPI + scikit-learn / XGBoost / CatBoost + SQLite. No external services, no ORM — just plain functions and plain SQL.
-
+Python + FastAPI + scikit-learn / XGBoost / CatBoost + SQLite. 
 ## Quick start
 
 ```bash
 python -m venv venv && source venv/bin/activate      # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
-python -m app.ml.train                 # generates data if missing, trains 3 models, saves the best
+python -m app.ml.train                 
 python -m scripts.seed_db              # fills the database with a sample Marathahalli network
 uvicorn app.api.main:app --reload      # API at http://127.0.0.1:8000  (Swagger UI at /docs)
 pytest -q                              # ~340 tests
